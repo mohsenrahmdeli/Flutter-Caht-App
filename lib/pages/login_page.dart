@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../components/my_textfields.dart';
+
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
@@ -29,7 +31,15 @@ class LoginPage extends StatelessWidget {
             const SizedBox(
               height: 25,
             ),
-            
+            MyTextFields(
+              hintText: "Email",
+              obscureText: false,
+            ),
+            const SizedBox(height: 10),
+            const MyTextFields(
+              hintText: "Password",
+              obscureText: true,
+            )
           ],
         ),
       ),

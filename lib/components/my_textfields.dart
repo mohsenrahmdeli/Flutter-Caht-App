@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 class MyTextFields extends StatelessWidget {
   final String hintText;
-  const MyTextFields({super.key, required this.hintText});
+  final bool obscureText;
+  const MyTextFields(
+      {super.key, required this.hintText, required this.obscureText});
 
   @override
   Widget build(BuildContext context) {
@@ -11,6 +13,7 @@ class MyTextFields extends StatelessWidget {
         horizontal: 25.0,
       ),
       child: TextField(
+        obscureText: obscureText,
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(
