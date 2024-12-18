@@ -31,7 +31,7 @@ class LoginPage extends StatelessWidget {
             const SizedBox(
               height: 25,
             ),
-            MyTextFields(
+            const MyTextFields(
               hintText: "Email",
               obscureText: false,
             ),
