@@ -3,19 +3,16 @@ import 'package:flutter/material.dart';
 import '../components/my_button.dart';
 import '../components/my_textfields.dart';
 
-class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key});
-
-  @override
-  State<RegisterPage> createState() => _RegisterPageState();
-}
-
-final TextEditingController _emailController = TextEditingController();
+class RegisterPage extends StatelessWidget {
+  final TextEditingController _emailController = TextEditingController();
 final TextEditingController _pwController = TextEditingController();
 final TextEditingController _confirmController = TextEditingController();
-void register() {}
 
-class _RegisterPageState extends State<RegisterPage> {
+    final void Function()? onTap;
+  RegisterPage({super.key, required this.onTap});
+
+  void register() {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,7 +63,7 @@ class _RegisterPageState extends State<RegisterPage> {
             const SizedBox(
               height: 25,
             ),
-            const MyButton(
+            MyButton(
               text: 'Registrer',
               onTap: register,
             ),
@@ -82,11 +79,14 @@ class _RegisterPageState extends State<RegisterPage> {
                     color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
-                Text(
-                  "Login now",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.primary,
+                GestureDetector(
+                  onTap: onTap,
+                  child: Text(
+                    "Login now",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
                   ),
                 ),
               ],

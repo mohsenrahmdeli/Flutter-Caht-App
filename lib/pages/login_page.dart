@@ -5,10 +5,11 @@ import '../components/my_textfields.dart';
 import 'register_page.dart';
 
 class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
-
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _pwController = TextEditingController();
+  final void Function()? onTap;
+  LoginPage({super.key, required this.onTap});
+
   void login() {}
   @override
   Widget build(BuildContext context) {
@@ -67,14 +68,7 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return const RegisterPage();
-                      },
-                    ),
-                  ),
+                  onTap: onTap,
                   child: Text(
                     "Register now",
                     style: TextStyle(
