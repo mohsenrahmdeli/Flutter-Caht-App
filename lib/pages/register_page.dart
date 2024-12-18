@@ -2,14 +2,20 @@ import 'package:flutter/material.dart';
 
 import '../components/my_button.dart';
 import '../components/my_textfields.dart';
-import 'register_page.dart';
 
-class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
 
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _pwController = TextEditingController();
-  void login() {}
+  @override
+  State<RegisterPage> createState() => _RegisterPageState();
+}
+
+final TextEditingController _emailController = TextEditingController();
+final TextEditingController _pwController = TextEditingController();
+final TextEditingController _confirmController = TextEditingController();
+void register() {}
+
+class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +33,7 @@ class LoginPage extends StatelessWidget {
               height: 50,
             ),
             Text(
-              "Welcome backm you've been missed!",
+              "Let's create an account for you",
               style: TextStyle(
                 color: Theme.of(context).colorScheme.primary,
                 fontSize: 16,
@@ -41,18 +47,28 @@ class LoginPage extends StatelessWidget {
               hintText: "Email",
               obscureText: false,
             ),
-            const SizedBox(height: 10),
+            const SizedBox(
+              height: 10,
+            ),
             MyTextFields(
               controller: _pwController,
               hintText: "Password",
               obscureText: true,
             ),
             const SizedBox(
+              height: 10,
+            ),
+            MyTextFields(
+              controller: _confirmController,
+              hintText: "Confirm Password",
+              obscureText: true,
+            ),
+            const SizedBox(
               height: 25,
             ),
-            MyButton(
-              text: 'Logoin',
-              onTap: login,
+            const MyButton(
+              text: 'Registrer',
+              onTap: register,
             ),
             const SizedBox(
               height: 25,
@@ -61,26 +77,16 @@ class LoginPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Not a member? ",
+                  "Already have an account? ",
                   style: TextStyle(
                     color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
-                GestureDetector(
-                  onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return const RegisterPage();
-                      },
-                    ),
-                  ),
-                  child: Text(
-                    "Register now",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
+                Text(
+                  "Login now",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
               ],
