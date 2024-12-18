@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../components/my_button.dart';
 import '../components/my_textfields.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  LoginPage({super.key});
 
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _pwController = TextEditingController();
+  void login() {}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,14 +35,23 @@ class LoginPage extends StatelessWidget {
             const SizedBox(
               height: 25,
             ),
-            const MyTextFields(
+            MyTextFields(
+              controller: _emailController,
               hintText: "Email",
               obscureText: false,
             ),
             const SizedBox(height: 10),
-            const MyTextFields(
+            MyTextFields(
+              controller: _pwController,
               hintText: "Password",
               obscureText: true,
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            MyButton(
+              text: 'Logoin',
+              onTap: login,
             )
           ],
         ),
