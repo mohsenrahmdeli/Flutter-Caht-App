@@ -10,7 +10,9 @@ class LoginPage extends StatelessWidget {
   final void Function()? onTap;
   LoginPage({super.key, required this.onTap});
 
-  void login() {}
+  void login() {
+    
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,13 +54,14 @@ class LoginPage extends StatelessWidget {
               height: 25,
             ),
             MyButton(
-              text: 'Logoin',
+              text: 'Login',
               onTap: login,
             ),
             const SizedBox(
               height: 25,
             ),
             Row(
+              
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
