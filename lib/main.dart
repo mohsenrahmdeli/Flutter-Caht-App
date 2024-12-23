@@ -5,7 +5,7 @@ import 'themese/light_mode.dart';
 
 void main(dynamic DefaultFirebaseOption) async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOption.currentPlatform);
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 

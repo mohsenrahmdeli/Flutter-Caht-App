@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../auth/login_or_register.dart';
+import '../auth/auth_gate.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return  LoginOrRegister();
+              return  AuthGate();
             },
           ),
         );
